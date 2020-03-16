@@ -14,7 +14,7 @@ __global__ void cudaDumpImage(CUsurfObject surface_left, CUsurfObject surface_ri
         d_image[y*width+x]              = surf2Dread<uint8_t>(surface_left, x, y);
         d_image[y*width+x+height*width] = surf2Dread<uint8_t>(surface_right, x, y);
 
-        // printing for debugging purpose
+        // printing for debugging purpose, it should pring any number but not 0
         if (x == 1000 && y == 300){
             printf("surf2Dread at 1000x300 left: %3u, right: %3u \n", surf2Dread<uint8_t>(surface_left, x, y), surf2Dread<uint8_t>(surface_right, x, y));
         }
