@@ -65,7 +65,7 @@ void imageDumper(CUsurfObject surface_left, CUsurfObject surface_right, unsigned
     printf("Dumping frame to image %d \n", frameNumber);
 
     char filename_bmp[256];
-    sprintf(filename_bmp, "/media/94a96ba3-cd42-4f36-b3e4-d264669645a6/images/output%03u.bin", frameNumber);
+    sprintf(filename_bmp, "output%03u.bin", frameNumber);
     rawImageSaver(width, height*2, image, filename_bmp); // height*2 as we have two images
 
     printf("Freeing d_image memory\n");
