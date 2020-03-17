@@ -317,7 +317,9 @@ bool ScopedCudaEGLStreamFrameAcquire::dumpImage(int frameNumber) {
     // dumping images
     float time = 0.0f;
     auto start = std::chrono::high_resolution_clock::now();
-    imageDumper(cuResult_left, cuResult_left, m_frame_left.width, m_frame_left.height, frameNumber);
+    
+    imageDumper(cudaSurfObj_left, cudaSurfObj_left, m_frame_left.width, m_frame_left.height, frameNumber);
+    
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "Time taken by imageDumper: "
